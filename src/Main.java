@@ -14,7 +14,6 @@ Input: nums = [0]
 Output: [[],[0]]
  */
 public class Main {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	int [] n = {1,2,3,4,5};
@@ -33,13 +32,10 @@ public class Main {
 		else if (nums.length > 1) {
 			for(int i = 0; i<nums.length*2; ++i) {
 				subsList.add(new ArrayList<>());
-			}
-			
-										// when [0] == 1 len. * 2 [[2len.]]-[[][0]]	
+			}			// when [0] == 1 len. * 2 [[2len.]]-[[][0]]	
 		int restriction = nums.length; // - Each set is a subset of itself or an empty subset
 		int r=1;											
 		for(int i=0; i<nums.length; ++i) {
-				
 			while(r<=restriction) {
 					subsList.get(r).add(nums[i]);
 					if(r==restriction) {
@@ -49,10 +45,8 @@ public class Main {
 					}
 				++r;
 			   }
-			}
-	  
-		
-	}
+			}	
+		}
 		return subsList;
+		}
 	}
-}
